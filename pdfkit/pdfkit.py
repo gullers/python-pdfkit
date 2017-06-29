@@ -120,7 +120,7 @@ class PDFKit(object):
             yield '-'
 
     def command(self, path=None):
-        return list(self._command(path))
+        return ['xvfb-run', '--'] + list(self._command(path))
 
     def to_pdf(self, path=None):
         args = self.command(path)
